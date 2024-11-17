@@ -8,7 +8,7 @@
 /* Основные стили для body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #6c6c6c;
     color: #333;
     display: flex;
     justify-content: center;
@@ -16,13 +16,74 @@ body {
     flex-direction: column; /* Добавлено для вертикального расположения */
     height: 100vh;
     margin: 0;
+    overflow-y: scroll; /* Включает вертикальную прокрутку */
 }
 
-/* Стили для изображения */
-.image {
-    width: 200px; /* Ширина изображения */
-    height: auto; /* Высота будет автоматически пропорциональна ширине */
-    margin-bottom: 20px; /* Отступ снизу для изображения */
+/* Стили для шапки */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Стили для навигации */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Левая часть: Кнопка меню */
+.nav-left .menu-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.nav-left .menu-button:hover {
+    color: #000;
+}
+
+/* Центр: Логотип */
+.nav-center .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-center .logo:hover {
+    color: #000;
+}
+
+/* Правая часть: Ссылки */
+.nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-right .nav-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.nav-right .nav-link:hover {
+    color: #000;
 }
 
 /* Стили для кнопки */
@@ -34,13 +95,14 @@ body {
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Анимация левитации при наведении */
+/* При наведении на кнопку: поднимем и добавим тень */
 .button:hover {
+    transform: translateY(-5px); /* Поднимет кнопку */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень для эффекта подъема */
     background-color: #45a049;
-    animation: levitate 1.5s ease-in-out infinite;
 }
 
 /* Анимация левитации */
